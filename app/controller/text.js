@@ -4,8 +4,9 @@ const Controller = require('egg').Controller;
 
 class TextController extends Controller {
   async index() {
-    const { ctx } = this;
-    ctx.body = 'Hi Text';
+    const { ctx, service } = this;
+    ctx.type = 'application/pdf';
+    ctx.body = await service.text.getTextPdf();
   }
 }
 
