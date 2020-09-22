@@ -18,9 +18,17 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
+    pdfSize: [ 595, 842 ],
+    A4Size: [ 595, 842 ],
   };
 
   return {
